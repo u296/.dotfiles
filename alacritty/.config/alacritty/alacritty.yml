@@ -1077,22 +1077,8 @@ cyber_punk_neon: &cyber_punk_neon
 
 background_opacity: 0.82 
 
-# windows are 90x30 when new
-#window:
-#  dimensions:
-#    columns: 90
-#    lines: 30
-
-
 font:
-  normal:
-    family: Source Code Pro
-    style: Regular
-  bold:
-    family: Source Code Pro
-    style: Bold
-  italic:
-    family: Source Code Pro
-    style: Italic
+        family: Noto Sans Mono
+        size: 11.5
 
 colors: *sweet
