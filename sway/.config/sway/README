@@ -1,0 +1,10 @@
+dependencies:
+
+alacritty
+mako
+bemenu
+app-launch from https://github.com/u296/app-launch
+loginctl
+(sway)
+swaylock
+swaybar

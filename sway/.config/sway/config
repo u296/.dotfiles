@@ -1,0 +1,173 @@
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+set $cmd Ctrl
+
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term alacritty
+
+# default: set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# then it was: set $menu BEMENU_BACKEND=wayland j4-dmenu-desktop --dmenu='bemenu -i -m 1' --term='$term'
+set $menu BEMENU_BACKEND=wayland app-launch -t $term "bemenu -i -m 1"
+
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+# Read `man 5 sway-input` for more information about this section.
+input * {
+	xkb_layout se
+	xkb_variant svdvorak
+
+	accel_profile flat
+	pointer_accel 0
+}
+
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+$cmd+c reload
+
+floating_modifier $mod
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+
+bindsym $mod+$cmd+$left move left
+bindsym $mod+$cmd+$down move down
+bindsym $mod+$cmd+$up move up
+bindsym $mod+$cmd+$right move right
+
+bindsym $mod+$cmd+Left move left
+bindsym $mod+$cmd+Down move down
+bindsym $mod+$cmd+Up move up
+bindsym $mod+$cmd+Right move right
+
+
+workspace_auto_back_and_forth yes
+
+
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+$cmd+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+$cmd+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+$cmd+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+$cmd+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+$cmd+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+$cmd+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+$cmd+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+$cmd+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+$cmd+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+$cmd+0 move container to workspace $ws10; workspace $ws10
+
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+
+bindsym $mod+f fullscreen
+
+bindsym $mod+$cmd+space floating toggle
+
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+$cmd+minus move scratchpad
+
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px or 10ppt
+    bindsym $down resize grow height 10px or 10ppt
+    bindsym $up resize shrink height 10px or 10ppt
+    bindsym $right resize grow width 10px or 10ppt
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px or 10ppt
+    bindsym Down resize grow height 10px or 10ppt
+    bindsym Up resize shrink height 10px or 10ppt
+    bindsym Right resize grow width 10px or 10ppt
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    #
+    # default: status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+#mod + plus is system menu
+set $mode_system "(L)ock, (E)xit, (S)uspend, (R)eboot, (B)ios, ($cmd+S)hutdown"
+mode $mode_system {
+	bindsym l	exec swaylock, mode "default"
+	bindsym e	exec swaymsg exit, mode "default"
+	bindsym s	exec swaylock && loginctl suspend, mode "default"
+	bindsym r	exec loginctl reboot, mode "default"
+	bindsym b	exec loginctl reboot --firmware-setup, mode "default"
+	bindsym $cmd+s	exec loginctl poweroff, mode "default"
+
+	bindsym return mode "default"
+	bindsym escape mode "default"
+}
+bindsym $mod+plus mode $mode_system
+
+bindsym $mod+s exec swaylock
+
+exec ~/.config/autostart.sh
+
+include /etc/sway/config.d/*
