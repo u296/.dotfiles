@@ -1,0 +1,4 @@
+
+if [ -f ~/.local/shell/interactive ]; then
+	source ~/.local/shell/interactive
+fi

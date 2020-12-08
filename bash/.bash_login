@@ -1,0 +1,9 @@
+source ~/.config/shell/always
+source ~/.config/shell/login
+
+# source the interactive file if shell
+# is interactive
+
+if [ -z "$PS1" ]; then
+	source ~/.config/shell/interactive
+fi

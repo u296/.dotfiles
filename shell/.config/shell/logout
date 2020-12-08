@@ -1,0 +1,6 @@
+
+# local logout script
+
+if [ -f ~/.local/shell/logout ]; then
+	source ~/.local/shell/logout
+fi

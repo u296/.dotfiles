@@ -1,0 +1,10 @@
+# this makes all instances of bash source
+# the always script
+
+export BASH_ENV=~/.config/shell/always
+
+# allow for local configuration
+
+if [ -f ~/.local/shell/login ]; then
+	source ~/.local/shell/login
+fi

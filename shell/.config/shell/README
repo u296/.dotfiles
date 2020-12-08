@@ -1,0 +1,5 @@
+set up all the shells that are used on the local system to
+source these files when appropriate.
+
+these files will source ~/.local/shell/whatever if said file
+exists, to allow for system-specific execution of commands.
