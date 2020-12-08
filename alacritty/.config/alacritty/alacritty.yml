@@ -1078,7 +1078,9 @@ cyber_punk_neon: &cyber_punk_neon
 background_opacity: 0.82 
 
 font:
-        family: Noto Sans Mono
-        size: 11.5
+        size: 11
+        normal:
+                family: Noto Sans Mono
+
 
 colors: *sweet
