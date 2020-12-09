@@ -8,11 +8,10 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
 
 # default: set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# then it was: set $menu BEMENU_BACKEND=wayland j4-dmenu-desktop --dmenu='bemenu -i -m 1' --term='$term'
-set $menu BEMENU_BACKEND=wayland app-launch -t $term "bemenu -i -m 1"
+# then it was: set $menu BEMENU_BACKEND=wayland j4-dmenu-desktop --dmenu='bemenu -i -m 1' --term='$TERM'
+set $menu BEMENU_BACKEND=wayland app-launch -t $TERM "bemenu -i -m 1"
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
@@ -25,9 +24,13 @@ input * {
 	pointer_accel 0
 }
 
-bindsym $mod+Return exec $term
-bindsym $mod+q kill
+bindsym $mod+Return exec $TERM
 bindsym $mod+d exec $menu
+bindsym $mod+w exec $BROWSER
+bindsym $mod+m exec $MUSICPLAYER
+
+bindsym $mod+q kill
+
 bindsym $mod+$cmd+c reload
 
 floating_modifier $mod

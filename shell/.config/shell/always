@@ -5,8 +5,9 @@
 export EDITOR=nvim
 export PAGER=less
 export TERM=alacritty
-export TERMINAL=alacritty
+export TERMINAL=$TERM
 export BROWSER=firefox
+export MUSICPLAYER=mocp
 
 
 
