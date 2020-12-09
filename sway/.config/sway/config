@@ -155,11 +155,11 @@ bar {
 set $mode_system "(L)ock, (E)xit, (S)uspend, (R)eboot, (B)ios, ($cmd+S)hutdown"
 mode $mode_system {
 	bindsym l	exec swaylock, mode "default"
-	bindsym e	exec swaymsg exit, mode "default"
+	bindsym e	exec ~/.config/guistoprc.sh, exec swaymsg exit, exec , mode "default"
 	bindsym s	exec swaylock && loginctl suspend, mode "default"
-	bindsym r	exec loginctl reboot, mode "default"
-	bindsym b	exec loginctl reboot --firmware-setup, mode "default"
-	bindsym $cmd+s	exec loginctl poweroff, mode "default"
+	bindsym r	exec ~/.config/guistoprc.sh, exec loginctl reboot, mode "default"
+	bindsym b	exec ~/.config/guistoprc.sh, exec loginctl reboot --firmware-setup, mode "default"
+	bindsym $cmd+s	exec ~/.config/guistoprc.sh, exec loginctl poweroff, mode "default"
 
 	bindsym return mode "default"
 	bindsym escape mode "default"
@@ -168,6 +168,6 @@ bindsym $mod+plus mode $mode_system
 
 bindsym $mod+s exec swaylock
 
-exec ~/.config/autostart.sh
+exec ~/.config/guistartrc.sh
 
 include /etc/sway/config.d/*
