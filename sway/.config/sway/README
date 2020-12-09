@@ -8,3 +8,8 @@ loginctl
 (sway)
 swaylock
 swaybar
+
+things to know:
+
+on startup, $HOME/.config/guistart/*.sh are run
+on exit, $HOME/.config/guistop/*.sh are run
