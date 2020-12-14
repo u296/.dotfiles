@@ -1,6 +1,7 @@
 # deps:
 # neovim, less, alacritty, firefox
 
+alias systemctl=loginctl
 
 export EDITOR=nvim
 export PAGER=less
