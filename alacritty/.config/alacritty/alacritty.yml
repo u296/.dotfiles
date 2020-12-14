@@ -1072,6 +1072,28 @@ cyber_punk_neon: &cyber_punk_neon
       magenta: '0xc50ed2'
       cyan:    '0x05a2da'
       white:   '0xbcbcbc'
+  cyberpunk: &cyberpunk
+    primary:
+      background: '0x101136'
+      foreground: '0x0deef9'
+    normal:
+      black: '0x2e3837'
+      red:   '0xac0907'
+      green: '0x14ff00'
+      yellow: '0xf4f600'
+      blue:  '0x2b49a3'
+      magenta: '0xff296d'
+      cyan:  '0x05aaac'
+      white: '0xcfd4d7'
+    bright:
+      black: '0x252c26'
+      red:   '0xd94040'
+      green: '0x46de82'
+      yellow: '0xf4f63b'
+      blue:  '0x778ac9'
+      magenta: '0xff117f'
+      cyan:  '0x47c6f7'
+      white: '0xeeeeec'
 
 
 
@@ -1083,4 +1105,4 @@ font:
                 family: Noto Sans Mono
 
 
-colors: *sweet
+colors: *cyberpunk
