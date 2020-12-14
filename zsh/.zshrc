@@ -16,7 +16,6 @@ zstyle 'completion::complete:*' gain-privileges 1
 zstyle :compinstall filename '$HOME/.zshrc'
 
 PROMPT="[%n@%m %1~]$ "
-RPROMPT="%T"
 
 HISTFILE=~/.histfile
 HISTSIZE=500
