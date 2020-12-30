@@ -11,9 +11,11 @@ set $right l
 
 # default: set $menu dmenu_path | dmenu | xargs swaymsg exec --
 # then it was: set $menu BEMENU_BACKEND=wayland j4-dmenu-desktop --dmenu='bemenu -i -m 1' --term='$TERM'
-set $menu BEMENU_BACKEND=wayland app-launch -t $TERM "bemenu -i -m 1"
+set $menu BEMENU_BACKEND=wayland app-launch -t $TERM "bemenu -i -m 1" /usr/share/applications ~/.local/share/applications ~/Desktop
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+output DP-3 mode 1920x1080@144Hz
 
 # Read `man 5 sway-input` for more information about this section.
 input * {
@@ -145,7 +147,7 @@ bar {
     #
     # default: status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
 
     colors {
         statusline #ffffff
