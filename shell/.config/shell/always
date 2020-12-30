@@ -3,6 +3,10 @@
 
 alias systemctl=loginctl
 
+killall() {
+	kill $(pidof $1)
+}
+
 export EDITOR=nvim
 export PAGER=less
 export TERM=alacritty
