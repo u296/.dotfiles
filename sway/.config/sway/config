@@ -15,7 +15,7 @@ set $menu BEMENU_BACKEND=wayland app-launch -t $TERM "bemenu -i -m 1" /usr/share
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output DP-3 mode 1920x1080@144Hz
+include ~/.local/sway/*
 
 # Read `man 5 sway-input` for more information about this section.
 input * {
@@ -26,7 +26,7 @@ input * {
 	pointer_accel 0
 }
 
-bindsym $mod+Return exec $TERM
+bindsym $mod+Return exec $TERMINAL
 bindsym $mod+d exec $menu
 bindsym $mod+w exec $BROWSER
 bindsym $mod+m exec $MUSICPLAYER
