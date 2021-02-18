@@ -9,8 +9,7 @@ killall() {
 
 export EDITOR=nvim
 export PAGER=less
-export TERM=alacritty
-export TERMINAL=$TERM
+export TERMINAL=alacritty
 export BROWSER=firefox
 export MUSICPLAYER=mocp
 
