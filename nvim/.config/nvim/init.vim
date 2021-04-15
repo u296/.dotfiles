@@ -1,5 +1,8 @@
 syntax on
 
+" no \n at the end of file
+set nofixendofline
+
 " mouse in normal and visual mode
 set mouse=nv
 
