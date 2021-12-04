@@ -11,7 +11,7 @@ export EDITOR=nvim
 export PAGER=less
 export TERMINAL=alacritty
 export BROWSER=firefox
-export MUSICPLAYER=mocp
+export MUSICPLAYER=vlc
 
 
 
