@@ -1142,7 +1142,8 @@ cyber_punk_neon: &cyber_punk_neon
 
 
 
-background_opacity: 0.82 
+window:
+  opacity: 0.8
 
 font:
         size: 11
