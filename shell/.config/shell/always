@@ -1,8 +1,6 @@
 # deps:
 # neovim, less, alacritty, firefox
 
-alias systemctl=loginctl
-
 killall() {
 	kill $(pidof $1)
 }
