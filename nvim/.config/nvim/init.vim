@@ -23,15 +23,6 @@ inoremap <C-tab>   <ESC>:tabnext<CR>
 inoremap <C-t>     <ESC>:tabnew<CR>
 
 
-" plugins
-
-" only get airline by default
-call plug#begin()
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
-
-let g:airline_theme='term'
 
 " whatever is in  this file will
 " override the current plugin
