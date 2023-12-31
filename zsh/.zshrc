@@ -11,6 +11,7 @@ zle -N down-line-or-beginning-search
 
 
 bindkey -v
+bindkey '^H' backward-kill-word
 
 zstyle 'completion::complete:*' gain-privileges 1
 zstyle :compinstall filename '$HOME/.zshrc'
@@ -23,7 +24,7 @@ SAVEHIST=100
 
 setopt autocd extendedglob nomatch
 
-unsetopt beep notify
+#unsetopt beep notify
 
 
 source ~/.config/shell/interactive
